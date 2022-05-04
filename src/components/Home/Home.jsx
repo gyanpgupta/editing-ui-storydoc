@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import IconSelectGrid from '../Layout/IconSelectGrid';
 import { initialIcons } from '../../utils/InitalIcons';
 import { Button, TextField, Tooltip } from '@mui/material';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -34,7 +35,7 @@ const Home = () => {
     }
     setEdit(editField)
   }
-  
+
   const handleTextEdit = (e, index) => {
     setEditText(e.target.value)
   }
@@ -48,8 +49,20 @@ const Home = () => {
       setEditText('')
     }
   }
+  const shuffleData = (i, j) => {
+    [data[i], data[j]] = [data[j], data[i]];
+    setData([...data])
+    setEdit()
+    setEdit()
+    setEditText('')
+  }
+  const toolText = `1. You can edit the icons, 
+  2. You can edit the text,
+  3. You can edit the Title,
+  4. You can switch the order of the sections`
+
   return (
-    <div>
+    <React.Fragment>
       <h3 className="heading" contenteditable="true">
         Insert the Title here{" "}
       </h3>
@@ -82,7 +95,18 @@ const Home = () => {
           setSelectedGrid={setSelectedGrid}
         />
       }
-    </div >
+
+      <Button onClick={() => shuffleData(0, 1)} variant="outlined">Replace first and second</Button>
+      <Button onClick={() => shuffleData(1, 2)} variant="outlined">Replace third and second</Button>
+      <Button onClick={() => shuffleData(2, 0)} variant="outlined">Replace third and first</Button>
+
+
+      <React.Fragment>
+        <Tooltip title={toolText}>
+          <HelpOutlineIcon />
+        </Tooltip>
+      </React.Fragment>
+    </React.Fragment >
   )
 }
 

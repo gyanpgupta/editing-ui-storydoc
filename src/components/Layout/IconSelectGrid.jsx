@@ -7,7 +7,6 @@ import Modal from '@mui/material/Modal';
 import { Button } from '@mui/material';
 import { iconData } from '../../utils/AllIcons';
 
-
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === '#1A2027',
   ...theme.typography.body2,
@@ -29,7 +28,6 @@ const style = {
   px: 4,
   pb: 3,
 };
-
 
 export default function IconSelectGrid({ openModal, setOpenModal, setData, data, selectedGrid, setSelectedGrid }) {
   const [open, setOpen] = useState(openModal)
