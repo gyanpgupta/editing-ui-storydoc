@@ -57,7 +57,7 @@ export default function IconSelectGrid({ openModal, setOpenModal, setData, data,
         <Grid container spacing={{ xs: 1, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
           {iconData.map((icon, index) => (
             <Grid item xs={2} sm={4} md={4} key={index}>
-              <Item onClick={() => handleSelectIcon(index)}>{icon}</Item>
+              <Item style={{borderStyle: "solid",borderColor: `${editSeletedIcon===index ? 'coral': ''}`}} onClick={() => handleSelectIcon(index)}>{icon}</Item>
             </Grid>
           ))}
         </Grid>

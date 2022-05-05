@@ -101,11 +101,11 @@ const Home = () => {
       <Button onClick={() => shuffleData(2, 0)} variant="outlined">Replace third and first</Button>
 
 
-      <React.Fragment>
+      <div style={{paddingTop: "5px"}}>
         <Tooltip title={toolText}>
           <HelpOutlineIcon />
         </Tooltip>
-      </React.Fragment>
+      </div>
     </React.Fragment >
   )
 }
